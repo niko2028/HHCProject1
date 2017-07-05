@@ -11,19 +11,11 @@ namespace App9
     {
         public MyContentPage()
         {
+            Title = "Hogwarts: The Cup";
             Padding = new Thickness(30);
             BackgroundColor = Color.DarkSlateGray;
             BackgroundImage = "fondohp.png";    
             
-            var white = new Label
-            {
-                Text = "Hogwarts: House Cup",
-                BackgroundColor = Color.Transparent,
-                TextColor = Color.WhiteSmoke,
-                FontAttributes = FontAttributes.Italic,         
-                FontSize = 25,
-                
-            };
             var btnUsuarioRegistrado = new Button
             {
                 VerticalOptions = LayoutOptions.EndAndExpand,
@@ -61,7 +53,7 @@ namespace App9
             {
                 Padding = 20,
                 Spacing = 40,
-                Children = { white, btnUsuarioRegistrado, btnUsuarioNuevo}
+                Children = { btnUsuarioRegistrado, btnUsuarioNuevo}
             };
         }
     }

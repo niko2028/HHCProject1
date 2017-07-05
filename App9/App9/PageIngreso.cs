@@ -14,7 +14,7 @@ namespace App9
         {
             Padding = new Thickness(30);
             BackgroundColor = Color.DarkSlateGray;
-            BackgroundImage = "damagorda";
+            BackgroundImage = "damagorda.jpg";
             var white = new Label
             {
                 Text = "Ingresar",

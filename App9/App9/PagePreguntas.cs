@@ -83,6 +83,8 @@ namespace App9
             btnCorrecto.Clicked += (sender, e) =>
             {
                 btnCorrecto.BackgroundColor = Color.Green;
+                DisplayAlert("Message", "Correcto", "OK");
+                Navigation.PushAsync(new Sombrero());
 
             };
             var correcto = new Label
