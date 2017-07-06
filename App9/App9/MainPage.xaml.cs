@@ -14,24 +14,24 @@ namespace App9
             Title = "Hogwarts: The Cup";
             Padding = new Thickness(30);
             BackgroundColor = Color.DarkSlateGray;
-            BackgroundImage = "fondohp.png";    
-            
+            BackgroundImage = "fondohp.png";
+
             var btnUsuarioRegistrado = new Button
             {
-                VerticalOptions = LayoutOptions.EndAndExpand,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                Text = "Ingresar",             
+                VerticalOptions = LayoutOptions.End,
+                HorizontalOptions = LayoutOptions.Start,
+                Text = "Ingresar",
                 TextColor = Color.White,
                 BackgroundColor = Color.Transparent,
                 BorderColor = Color.White,
                 FontSize = 20
-                
-                
+
+
             };
             var btnUsuarioNuevo = new Button
             {
-                VerticalOptions = LayoutOptions.EndAndExpand,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.End,
+                HorizontalOptions = LayoutOptions.End,
                 Text = "Registrarse",
                 TextColor = Color.White,
                 BackgroundColor = Color.Transparent,
@@ -45,15 +45,22 @@ namespace App9
             };
             btnUsuarioRegistrado.Clicked += (sender, e) =>
             {
-                Navigation.PushAsync(new PageIngreso());
-
+                Navigation.PushAsync(new PageIngreso());      
             };
-            
-            Content = new StackLayout
+            var grid = new Grid();
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.Children.Add(btnUsuarioRegistrado, 0, 0);
+            grid.Children.Add(btnUsuarioNuevo, 1, 0);
+            Content = new ScrollView
             {
-                Padding = 20,
-                Spacing = 40,
-                Children = { btnUsuarioRegistrado, btnUsuarioNuevo}
+                Content = new StackLayout
+                {
+                    VerticalOptions = LayoutOptions.End,
+                    Padding = 10,
+                    Spacing = 20,
+                    Children = { grid }
+                }
             };
         }
     }

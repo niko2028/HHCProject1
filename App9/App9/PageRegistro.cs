@@ -10,6 +10,7 @@ namespace App9
     {
         public PageRegistro()
         {
+            Title = "Registro";
             Padding = new Thickness(30);
             BackgroundColor = Color.DarkSlateGray;
             BackgroundImage = "registrohp.jpg";
@@ -24,6 +25,7 @@ namespace App9
             var btnUsuario = new Button
             {
                 Text = "Aceptar",
+                VerticalOptions = LayoutOptions.End,
                 TextColor = Color.White,
                 BackgroundColor = Color.Transparent,
                 BorderColor = Color.White,
@@ -63,7 +65,7 @@ namespace App9
             btnUsuario.Clicked += (sender, e) =>
             {
                 DisplayAlert("Message", "Registro Exitoso", "OK");
-                Navigation.PushAsync(new PagePreguntas());
+                Navigation.PushAsync(new SombreroSelec());
 
             };
             Content = new StackLayout
@@ -72,6 +74,8 @@ namespace App9
                 Spacing = 20,
                 Children = { white, txtboxMail, txtboxClave, txtboxReclave, btnUsuario }
             };
+
+
         }
       /*  private async void btnUsuario_Clicked(object sender, EventArgs e)
         {

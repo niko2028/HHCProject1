@@ -12,9 +12,11 @@ namespace App9
 
         public PageIngreso()
         {
+            Title = "Ingreso";
             Padding = new Thickness(30);
             BackgroundColor = Color.DarkSlateGray;
             BackgroundImage = "damagorda.jpg";
+            
             var white = new Label
             {
                 Text = "Ingresar",

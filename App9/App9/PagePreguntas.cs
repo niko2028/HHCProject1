@@ -64,6 +64,7 @@ namespace App9
                 btnRespuesta2.BackgroundColor = Color.Red;
                 btnRespuesta3.BackgroundColor = Color.Red;
                 btnCorrecto.BackgroundColor = Color.Green;
+                
             };
             btnRespuesta2.Clicked += (sender, e) =>
             {
@@ -83,23 +84,29 @@ namespace App9
             btnCorrecto.Clicked += (sender, e) =>
             {
                 btnCorrecto.BackgroundColor = Color.Green;
-                DisplayAlert("Message", "Correcto", "OK");
-                Navigation.PushAsync(new Sombrero());
+               // DisplayAlert("Message", "Correcto", "OK");
+                Navigation.PushAsync(new SalaComun());
 
             };
+            var webImage = new Image { Aspect = Aspect.AspectFit };
+            {
+               // webImage.Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"));
+            }
             var correcto = new Label
             {
                 Text = "",
                 TextColor = Color.White,
                 BackgroundColor = Color.Green
             };
-            Content = new StackLayout
+            Content = new ScrollView
             {
-                Padding = 30,
-                Spacing = 20,
-                Children = { white, btnRespuesta2, btnRespuesta, btnCorrecto, btnRespuesta3}
-            };
-            
+                Content = new StackLayout
+                {
+                    Padding = 30,
+                    Spacing = 20,
+                    Children = { white, webImage, btnRespuesta2, btnRespuesta, btnCorrecto, btnRespuesta3 }
+                }
+            };          
         }
     }
 }
