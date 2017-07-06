@@ -9,54 +9,50 @@ namespace App9
 {
     public class SalaComun : TabbedPage
     {
+        
         public SalaComun()
         {
             this.Title = "Sala Comun";
-            var btnGry = new Button
+            BarBackgroundColor = Color.DarkGreen;
+            var imagenGry = new Image
             {
-                Text = "Gryffindor",
+                Source = "gryffindor.png",
+            };      
+            var imagenSly = new Image
+            {
+                Source = "slytherin.png",
             };
-            var btnSly = new Button
+            var imagenRav = new Image
             {
-                Text = "Slytherin",
+                Source = "ravenclaw.png"
             };
-            var btnRav = new Button
+            var imagenHuf = new Image
             {
-                Text = "Ravenclaw"
-            };
-            var btnHuf = new Button
-            {
-                Text = "Hufflepuff"
+                Source = "hufflepuff.png"
             };
             this.Children.Add(new ContentPage
             {
-                Title = "Casas",
-                BackgroundImage = "",
-                Content = new ListView
+                Title = "Casa",
+                BackgroundImage = "slytherinmain.jpg",
+                Content = new StackLayout
                 {
-                    BackgroundColor = Color.Goldenrod,
-                    ItemsSource = new List<Button>
-                    {
-                        btnGry,
-                        btnHuf,
-                        btnSly,
-                        btnRav,
-                    }
                     
+                    Spacing = 1,
+                    Children = {
+                        
+                    }
                 },
                 
             }
             );
             this.Children.Add(new ContentPage
             {
-                Title = "Loco",
+                Title = "Tabla Casas",
                 Content = new StackLayout
                 {
-                    Children = {new BoxView { Color = Color.Gray},
-                               {new BoxView {Color = Color.Red} }
-                    }
-                }
+                    Children = { imagenSly, imagenRav, imagenGry, imagenHuf },
 
+                }
             });
         }
     }
