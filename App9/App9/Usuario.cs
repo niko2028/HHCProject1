@@ -18,6 +18,7 @@ namespace App9
         [Unique]
         public string Mail { set; get; }
         public string Clave { set; get; }
+        public string Casa { set; get; }
         public string EMail
         {
             get { return string.Format("{0}", this.Mail); }
@@ -28,7 +29,7 @@ namespace App9
         }
         public override string ToString()
         {
-            return string.Format("{0}, {1}", EMail, ClaveEdited);
+            return string.Format("{0}, {1}, {2}", EMail, ClaveEdited, Casa);
         }
     }
 }

@@ -85,7 +85,7 @@ namespace App9
             {
                 btnCorrecto.BackgroundColor = Color.Green;
                // DisplayAlert("Message", "Correcto", "OK");
-                Navigation.PushAsync(new SalaComun());
+                Navigation.PushModalAsync(new SalaComun());
 
             };
             var webImage = new Image { Aspect = Aspect.AspectFit };

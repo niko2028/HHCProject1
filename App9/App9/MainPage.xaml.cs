@@ -45,7 +45,8 @@ namespace App9
             };
             btnUsuarioRegistrado.Clicked += (sender, e) =>
             {
-                Navigation.PushAsync(new PageIngreso());      
+                Navigation.PushAsync(new PageIngreso()); 
+                
             };
             var grid = new Grid();
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });

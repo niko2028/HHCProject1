@@ -15,6 +15,7 @@ namespace App9
 		public PreguntasSombrero ()
 		{
 			InitializeComponent ();
+            Title = "Preguntas Sombrero";
             BackgroundColor = Color.DarkGray;
             var pergamino = new Image
             {
@@ -64,7 +65,7 @@ namespace App9
 
         private void BotonGry_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SalaComun());
+            Navigation.PushModalAsync(new SalaComun());
         }
         private void BotonSly_Clicked(object sender, EventArgs e)
         {

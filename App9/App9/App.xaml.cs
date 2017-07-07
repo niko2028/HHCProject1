@@ -14,7 +14,7 @@ namespace App9
             InitializeComponent();
             MainPage = new NavigationPage(new MyContentPage())
             {
-                BarBackgroundColor = Color.LightBlue,
+                BarBackgroundColor = Color.Black,
                 BarTextColor = Color.White
             };
              

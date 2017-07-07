@@ -17,14 +17,6 @@ namespace App9
             BackgroundColor = Color.DarkSlateGray;
             BackgroundImage = "damagorda.jpg";
             
-            var white = new Label
-            {
-                Text = "Ingresar",
-                BackgroundColor = Color.Transparent,
-                TextColor = Color.Black,
-                FontAttributes = FontAttributes.Italic,
-                FontSize = 20,
-            };
             var btnIngresar = new Button
             {
                 Text = "Ingresar",
@@ -64,7 +56,7 @@ namespace App9
             btnIngresar.Clicked += (sender, e) =>
             {
                 DisplayAlert("Message", "Bienvenido", "OK");
-                Navigation.PushAsync(new PagePreguntas());
+                Navigation.PushModalAsync(new SalaComun());
                 /*Usuario usuarioPrueba = new Usuario
                 {
                     Mail = txtboxMail.Text,
@@ -101,7 +93,7 @@ namespace App9
                 
                 Padding = 20,
                 Spacing = 20,
-                Children = { white, txtboxMail, txtboxClave, btnIngresar, }
+                Children = { txtboxMail, txtboxClave, btnIngresar, }
             };
         }
     }
