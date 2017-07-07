@@ -70,7 +70,7 @@ namespace App9
                 FontSize = 15,
                 BackgroundColor = Color.Transparent,
             };
-            
+
             var gridSalaComun = new Grid();
             gridSalaComun.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             gridSalaComun.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
@@ -105,8 +105,32 @@ namespace App9
                 }
             });
             btnPreguntas.Clicked += BtnPreguntas_Clicked;
-        }
+            var imagenGranComedor = new Image
+            {
+                Source = "comedorgryf.jpg",
+            };
+            var lblCampeones = new Label
+            {
+                Text = "Campeones del mes",
+                TextColor = Color.Goldenrod,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                FontSize = 20,
+                BackgroundColor = Color.Transparent
+            };
+            this.Children.Add(new ContentPage
+            {  
+                Title = "Gran Comedor",
+                Content = new ScrollView
+                {
+                    Content = new StackLayout
+                    {
+                        Children = {imagenGranComedor, lblCampeones },
+                    }
+                }
+                });
 
+            btnPreguntas.Clicked += BtnPreguntas_Clicked;
+        }
         private void BtnPreguntas_Clicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new PagePreguntas());
