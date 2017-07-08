@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
-
 namespace App9
 {
     public class SalaComun : TabbedPage
@@ -105,6 +103,7 @@ namespace App9
                 }
             });
             btnPreguntas.Clicked += BtnPreguntas_Clicked;
+            
             var imagenGranComedor = new Image
             {
                 Source = "comedorgryf.jpg",
@@ -114,17 +113,22 @@ namespace App9
                 Text = "Campeones del mes",
                 TextColor = Color.Goldenrod,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
-                FontSize = 20,
+                FontSize = 25,
                 BackgroundColor = Color.Transparent
             };
+            var gridGranComedor = new Grid();
+            gridGranComedor.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            gridGranComedor.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            gridGranComedor.Children.Add(lblCampeones, 0, 0);
             this.Children.Add(new ContentPage
             {  
                 Title = "Gran Comedor",
+                BackgroundImage = "comedorgryf.jpg",
                 Content = new ScrollView
                 {
                     Content = new StackLayout
-                    {
-                        Children = {imagenGranComedor, lblCampeones },
+                    {    
+                        Children = {gridGranComedor },
                     }
                 }
                 });
